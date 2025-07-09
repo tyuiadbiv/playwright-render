@@ -1,8 +1,12 @@
 services:
-  - type: cron
-    name: download-report
-    schedule: "0 2 * * *" # 毎日11:00(JST)
+  - type: web
+    name: playwright-report-runner
     env: node
     plan: free
-    buildCommand: npm install
+    buildCommand: |
+      npm install
+      npx playwright install --with-deps
     startCommand: node download-report.js
+    envVars:
+      - key: NODE_ENV
+        value: production
