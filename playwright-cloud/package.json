@@ -1,0 +1,10 @@
+{
+  "name": "playwright-cloud",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node download-report.js"
+  },
+  "dependencies": {
+    "playwright": "^1.44.0"
+  }
+}

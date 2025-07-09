@@ -1,0 +1,11 @@
+// tests/tiktok.spec.ts
+import { test, expect } from '@playwright/test';
+
+// ✅ auth.json を使ってログイン状態から開始
+test.use({ storageState: 'auth.json' });
+
+test('ログイン済みでTikTok Businessにアクセス', async ({ page }) => {
+  await page.goto('https://business.tiktok.com/ads/manager/report');
+  await expect(page).toHaveURL(/manager\/report/); // URL確認
+  console.log('✅ ページ表示成功');
+});

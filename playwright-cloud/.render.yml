@@ -1,0 +1,8 @@
+services:
+  - type: cron
+    name: download-report
+    schedule: "0 2 * * *" # 毎日11:00(JST)
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node download-report.js
