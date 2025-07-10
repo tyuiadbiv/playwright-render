@@ -1,11 +1,10 @@
 services:
   - type: web
-    name: playwright-report-runner
+    name: playwright-render
     env: node
-    plan: free
     buildCommand: |
       npm install
-      npx playwright install --with-deps
+      npx playwright install
     startCommand: node download-report.js
     envVars:
       - key: NODE_ENV
