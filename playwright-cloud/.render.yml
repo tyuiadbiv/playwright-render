@@ -2,10 +2,9 @@ services:
   - type: web
     name: playwright-render
     env: node
+    plan: free
     buildCommand: |
       npm install
       npx playwright install
     startCommand: node download-report.js
-    envVars:
-      - key: NODE_ENV
-        value: production
+    rootDir: . # ルートディレクトリが /Library/Playwright_sample/playwright-cloud の場合ここを . に
